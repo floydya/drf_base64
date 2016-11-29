@@ -15,7 +15,7 @@ setup(
     license='MIT License',  # example license
     description='Package description',
     long_description=README,
-    url='<package homepage>',
+    url='https://bitbucket.org/levit_scs/drf_base64',
     author='LevIT SCS',
     author_email='info@levit.be',
     classifiers=[
