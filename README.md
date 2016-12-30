@@ -1,4 +1,4 @@
-# LevIT SCS's DRF Base64
+# DRF Base64
 
 Project description goes here.
 
