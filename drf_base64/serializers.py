@@ -6,19 +6,18 @@ from rest_framework.serializers import (ModelSerializer as DRFModelSerializer,
 from .fields import Base64FileField, Base64ImageField
 
 
-ms_field_mapping = DRFModelSerializer.serializer_field_mapping
-ms_field_mapping.update({
-    models.FileField: Base64FileField,
-    models.ImageField: Base64ImageField,
-})
+class Base64ModelSerializerMixin(object):
+
+    def __init__(self, *args, **kwargs):
+        self.serializer_field_mapping.update({
+            models.FileField: Base64FileField,
+            models.ImageField: Base64ImageField,
+        })
+        super(Base64ModelSerializerMixin, self).__init__(*args, **kwargs)
 
 
-# class Base64ModelSerializerMixin(object):
+class ModelSerializer(Base64ModelSerializerMixin, DRFModelSerializer):
+    pass
 
-
-class ModelSerializer(DRFModelSerializer):
-    field_mapping = ms_field_mapping
-
-
-# class HyperlinkedModelSerializer(Base64ModelSerializerMixin, DRFHyperlinkedModelSerializer):
-#     pass
+class HyperlinkedModelSerializer(Base64ModelSerializerMixin, DRFHyperlinkedModelSerializer):
+    pass
