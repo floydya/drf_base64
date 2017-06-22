@@ -13,6 +13,8 @@ class Base64FieldMixin(object):
             # base64 encoded file - decode
             format, datastr = data.split(';base64,')    # format ~= data:image/X,
             ext = format.split('/')[-1]    # guess file extension
+            if ext[:3] == 'svg':
+                ext = 'svg'
 
             data = ContentFile(
                 base64.b64decode(datastr),
