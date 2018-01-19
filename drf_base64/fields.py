@@ -5,6 +5,8 @@ from django.core.files.base import ContentFile
 from rest_framework import serializers
 from rest_framework.fields import SkipField
 
+from six import text_type
+
 
 class Base64FieldMixin(object):
 
@@ -21,7 +23,7 @@ class Base64FieldMixin(object):
                 name='{}.{}'.format(uuid.uuid4(), ext)
             )
 
-        elif isinstance(data, str) and data.startswith('http'):
+        elif isinstance(data, text_type) and data.startswith('http'):
             raise SkipField()
 
         return data

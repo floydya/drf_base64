@@ -19,5 +19,6 @@ class Base64ModelSerializerMixin(object):
 class ModelSerializer(Base64ModelSerializerMixin, DRFModelSerializer):
     pass
 
+
 class HyperlinkedModelSerializer(Base64ModelSerializerMixin, DRFHyperlinkedModelSerializer):
     pass
