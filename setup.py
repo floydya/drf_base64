@@ -15,7 +15,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='drf_base64',
-    version='0.9.3',
+    version='0.9.4',
     packages=['drf_base64'],
     include_package_data=True,
     license='MIT License',  # example license
