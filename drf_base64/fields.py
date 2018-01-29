@@ -11,7 +11,7 @@ from six import text_type
 class Base64FieldMixin(object):
 
     def _decode(self, data):
-        if isinstance(data, str) and data.startswith('data:'):
+        if isinstance(data, text_type) and data.startswith('data:'):
             # base64 encoded file - decode
             format, datastr = data.split(';base64,')    # format ~= data:image/X,
             ext = format.split('/')[-1]    # guess file extension
