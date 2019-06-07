@@ -8,10 +8,14 @@ from rest_framework.fields import SkipField
 from six import text_type
 
 
+def is_text(data):
+    return isinstance(data, text_type) or isinstance(data, str)
+
+
 class Base64FieldMixin(object):
 
     def _decode(self, data):
-        if isinstance(data, text_type) and data.startswith('data:'):
+        if is_text(data) and data.startswith('data:'):
             # base64 encoded file - decode
             format, datastr = data.split(';base64,')    # format ~= data:image/X,
             ext = format.split('/')[-1]    # guess file extension
@@ -23,7 +27,7 @@ class Base64FieldMixin(object):
                 name='{}.{}'.format(uuid.uuid4(), ext)
             )
 
-        elif isinstance(data, text_type) and data.startswith('http'):
+        elif is_text(data) and data.startswith('http'):
             raise SkipField()
 
         return data

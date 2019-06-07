@@ -6,19 +6,19 @@
 
 **DRF-Base64** is compatible with the following matrix
 
-|                 | Py 3.5      | Py 3.6      | Py 3.7      |
-| --------------- | ----------- | ----------- | ----------- |
-| **Django 1.8**  | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 |
-| **Django 1.9**  | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 |
-| **Django 1.10** | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 |
-| **Django 1.11** | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 |
-| **Django 2.0**  | DRF 3.7+    | DRF 3.7+    | DRF 3.7+    |
-| **Django 2.1**  | DRF 3.7+    | DRF 3.7+    | DRF 3.7+    |
-| **Django 2.2**  | DRF 3.7+    | DRF 3.7+    | DRF 3.7+    |
+|                 | Py 2.7      | Py 3.5      | Py 3.6      | Py 3.7      |
+| --------------- | ----------- | ----------- | ----------- | ----------- |
+| **Django 1.8**  | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 |
+| **Django 1.9**  | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 |
+| **Django 1.10** | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 |
+| **Django 1.11** | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 |
+| **Django 2.0**  | No          | DRF 3.7+    | DRF 3.7+    | DRF 3.7+    |
+| **Django 2.1**  | No          | DRF 3.7+    | DRF 3.7+    | DRF 3.7+    |
+| **Django 2.2**  | No          | DRF 3.7+    | DRF 3.7+    | DRF 3.7+    |
 
 ## Installation
 
-**DRF-Base64** is compatible with python 3.5+ as well as Django 1.8+ and DRF 3.5+
+**DRF-Base64** is compatible with python 2.7 and 3.5+ as well as Django 1.8+ and DRF 3.5+
 
 ### With pip
 

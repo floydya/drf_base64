@@ -1,9 +1,9 @@
 import base64
+import six
 
 from unittest import TestCase
 
 from django.core.files.base import ContentFile
-from django.db import models
 from rest_framework.fields import SkipField
 
 from drf_base64.fields import Base64FieldMixin, Base64FileField, Base64ImageField
@@ -20,17 +20,13 @@ class FieldTestCase(TestCase):
     def test_decode(self):
         orig = 'brol'
         extension = 'txt'
-        py2 = True
-        try:
-            test_str = 'data:text/{};base64,{}'.format(extension, base64.b64encode(orig))
-        except TypeError:
-            py2 = False
+        if six.PY3:
             orig = b'brol'
-            test_str = 'data:text/{};base64,{}'.format(extension, base64.b64encode(orig))
+        test_str = 'data:text/{};base64,{}'.format(extension, base64.b64encode(orig))
 
         output = self.field_serializer._decode(test_str)
         self.assertTrue(isinstance(output, ContentFile))
-        if py2:
+        if six.PY2:
             self.assertEqual(output.read(), orig)
         self.assertEqual(output.name.split('.')[-1], extension)
 
