@@ -1,10 +1,15 @@
-from django.conf.urls import include, url
 from django.contrib import admin
+from django.core.exceptions import ImproperlyConfigured
 
-urlpatterns = [
-    # Examples:
-    # url(r'^$', 'drf_base64.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+try:
+    from django.conf.urls import url, include
 
-    url(r'^admin/', include(admin.site.urls)),
-]
+    urlpatterns = [
+        url(r'^admin/', include(admin.site.urls)),
+    ]
+except ImproperlyConfigured:
+    from django.urls import path
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+    ]

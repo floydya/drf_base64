@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+MIDDLEWARE = MIDDLEWARE_CLASSES
 
 ROOT_URLCONF = 'urls'
 
