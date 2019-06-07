@@ -2,9 +2,20 @@
 
 **DRF-Base64** provides a set of serializers to handle Bas64-encoded files.
 
+## Compatibility Matrix
+
+**DRF-Base64** is compatible with the following matrix
+
+|                 | Py 3.5      | Py 3.6      | Py 3.7      |
+| --------------- | ----------- | ----------- | ----------- |
+| **Django 1.8**  | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 |
+| **Django 1.9**  | DRF 3.5-3.6 | DRF 3.5-3.6 | DRF 3.5-3.6 |
+| **Django 1.10** | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 |
+| **Django 1.11** | DRF 3.5-3.7 | DRF 3.5-3.7 | DRF 3.5-3.7 |
+
 ## Installation
 
-**DRF-Base64** is compatible with python 2.7 and 3.4+ as well as Django 1.8+ and DRF 3.3+
+**DRF-Base64** is compatible with python 3.5+ as well as Django 1.8-1.11 and DRF 3.5+
 
 ### With pip
 
